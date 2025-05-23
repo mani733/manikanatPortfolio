@@ -270,6 +270,7 @@
             width: 90%;
             margin-bottom: 2rem;
         }
+
         #bootStrapIcon {
             position: absolute;
             bottom: 8% !important;
@@ -277,6 +278,7 @@
             width: 36px;
             z-index: 2;
         }
+
         #mySqlIcon {
             position: absolute;
             top: 25% !important;
@@ -299,6 +301,42 @@
     }
 
     /* Project section ends */
+    /* Skills section */
+    .skills-section {
+        background: #202032;
+        border-radius: 24px;
+        margin: 2rem 0;
+        box-shadow: 0 8px 32px #4f8cff22;
+        animation: fadeInSection 1.2s ease;
+    }
+
+    .skill-card {
+        background: #23233a;
+        border-radius: 18px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 8px 32px #4f8cff44;
+    }
+
+    .progress {
+        background: #2d2d44;
+    }
+
+    .progress-bar {
+        border-radius: 8px;
+    }
+
+    @media (max-width: 767px) {
+        .skills-section .row>div {
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+
+    /* Skills section ends */
 </style>
 </head>
 
@@ -325,19 +363,25 @@
             <!-- Floating Skill Logos Around Hero -->
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java"
                 class="floating-logo" style="top: 10%; left: 8%; width: 38px; position: absolute; z-index: 2;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" title="Spring"
-                class="floating-logo" style="top: 18%; right: 10%; width: 36px; position: absolute; z-index: 2;">
-            <img id="mySqlIcon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" title="MySQL"
-                class="floating-logo mysql-mobile-fix" style="bottom: 18%; left: 12%; width: 36px; position: absolute; z-index: 2;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5"
-                class="floating-logo" style="top: 50%; left: 2%; width: 34px; position: absolute; z-index: 2;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring"
+                title="Spring" class="floating-logo"
+                style="top: 18%; right: 10%; width: 36px; position: absolute; z-index: 2;">
+            <img id="mySqlIcon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                alt="MySQL" title="MySQL" class="floating-logo mysql-mobile-fix"
+                style="bottom: 18%; left: 12%; width: 36px; position: absolute; z-index: 2;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+                title="HTML5" class="floating-logo"
+                style="top: 50%; left: 2%; width: 34px; position: absolute; z-index: 2;">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3"
                 class="floating-logo" style="bottom: 10%; right: 8%; width: 34px; position: absolute; z-index: 2;">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript"
-                class="floating-logo" style="top: 8%; right: 20%; width: 36px; position: absolute; z-index: 2;">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript" title="JavaScript" class="floating-logo"
+                style="top: 8%; right: 20%; width: 36px; position: absolute; z-index: 2;">
             <!-- Bootstrap and MySQL icons are hidden on small screens to avoid overlap -->
-            <img id="bootStrapIcon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap logo" title="Bootstrap"
-                class="floating-logo floating-logo-hide-mobile" style="bottom: 2%; left: 25%; width: 36px; position: absolute; z-index: 2;">
+            <img id="bootStrapIcon"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                alt="Bootstrap logo" title="Bootstrap" class="floating-logo floating-logo-hide-mobile"
+                style="bottom: 2%; left: 25%; width: 36px; position: absolute; z-index: 2;">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git"
                 class="floating-logo" style="bottom: 12%; right: 18%; width: 34px; position: absolute; z-index: 2;">
 
@@ -349,7 +393,7 @@
                     I build modern, responsive websites and web apps with a focus on clean design, accessibility, and
                     smooth user experience. Let’s create something amazing together!
                 </p>
-                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="/manikanatPortfolio/docs/Manikanta H Resume [CV].pdf" class="btn btn-primary" download>Download Resume</a>
             </div>
         </section>
         <!-- Project Details Section -->
@@ -405,16 +449,147 @@
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </button>
                 </div>
             </div>
         </section>
         <!-- Poject section details ends -->
+        <!-- Skills section -->
+        <section id="skills" class="skills-section py-5">
+            <div class="container">
+                <h2 class="section-title mb-4">Skills</h2>
+                <div class="row justify-content-center">
+                    <!-- Skill Card -->
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card skill-card text-center shadow-sm border-0 h-100">
+                            <div class="card-body">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                    alt="Java" title="Java" class="mb-3" style="width:48px;">
+                                <h5 class="card-title mb-2">Java</h5>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;"
+                                        aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <small class="text-muted">Advanced</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card skill-card text-center shadow-sm border-0 h-100">
+                            <div class="card-body">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                                    alt="Spring" title="Spring" class="mb-3" style="width:48px;">
+                                <h5 class="card-title mb-2">Spring</h5>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;"
+                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <small class="text-muted">Proficient</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card skill-card text-center shadow-sm border-0 h-100">
+                            <div class="card-body">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                    alt="MySQL" title="MySQL" class="mb-3" style="width:48px;">
+                                <h5 class="card-title mb-2">MySQL</h5>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 75%;"
+                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <small class="text-muted">Proficient</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card skill-card text-center shadow-sm border-0 h-100">
+                            <div class="card-body">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                    alt="HTML5" title="HTML5" class="mb-3" style="width:48px;">
+                                <h5 class="card-title mb-2">HTML5</h5>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 95%;"
+                                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <small class="text-muted">Expert</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card skill-card text-center shadow-sm border-0 h-100">
+                            <div class="card-body">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                    alt="CSS3" title="CSS3" class="mb-3" style="width:48px;">
+                                <h5 class="card-title mb-2">CSS3</h5>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;"
+                                        aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <small class="text-muted">Advanced</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card skill-card text-center shadow-sm border-0 h-100">
+                            <div class="card-body">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript" title="JavaScript" class="mb-3" style="width:48px;">
+                                <h5 class="card-title mb-2">JavaScript</h5>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;"
+                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <small class="text-muted">Advanced</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card skill-card text-center shadow-sm border-0 h-100">
+                            <div class="card-body">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                    alt="Bootstrap" title="Bootstrap" class="mb-3" style="width:48px;">
+                                <h5 class="card-title mb-2">Bootstrap</h5>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-purple" style="background-color:#7952b3;width:80%;"
+                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <small class="text-muted">Proficient</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="card skill-card text-center shadow-sm border-0 h-100">
+                            <div class="card-body">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                    alt="Git" title="Git" class="mb-3" style="width:48px;">
+                                <h5 class="card-title mb-2">Git</h5>
+                                <div class="progress mb-2" style="height: 8px;">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;"
+                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <small class="text-muted">Proficient</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Skills section ends -->
     </main>
 
     <footer>
