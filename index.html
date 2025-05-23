@@ -449,10 +449,91 @@
     }
 
     /* contact section ends */
+    /* loading animation */
+    @keyframes spinLoaderCircle {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes iconOrbit {
+        0% {
+            transform: rotate(0deg) translate(36px) rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg) translate(36px) rotate(-360deg);
+        }
+    }
+
+    @keyframes blinkCursor {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .typing-cursor {
+        animation: blinkCursor 0.8s steps(1) infinite;
+    }
+
+    #loader-content {
+        position: relative;
+        min-width: 260px;
+        min-height: 180px;
+    }
+
+    /* loading animation ends */
 </style>
 </head>
 
 <body>
+    <!-- Professional Loader Animation -->
+    <div id="loader-bg"
+        style="position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:#181824;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s;">
+        <div id="loader-content" style="text-align:center;">
+            <!-- Animated SVG Spinner with Professional Icons -->
+            <div style="margin-bottom:2rem;display:flex;justify-content:center;align-items:center;gap:18px;">
+                <svg width="72" height="72" viewBox="0 0 72 72" style="display:block;">
+                    <circle cx="36" cy="36" r="30" stroke="#4F8CFF" stroke-width="6" fill="none" opacity="0.18" />
+                    <circle cx="36" cy="36" r="30" stroke="#4F8CFF" stroke-width="6" fill="none"
+                        stroke-dasharray="60 120" stroke-linecap="round"
+                        style="transform-origin:36px 36px;animation:spinLoaderCircle 1.2s linear infinite;" />
+                </svg>
+                <span style="position:absolute;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"
+                        style="width:32px;position:absolute;top:-44px;left:-16px;animation:iconOrbit 2.2s linear infinite;" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+                        style="width:28px;position:absolute;top:10px;left:-54px;animation:iconOrbit 2.2s linear infinite reverse;" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+                        style="width:28px;position:absolute;top:60px;left:-10px;animation:iconOrbit 2.2s linear infinite;animation-delay:0.4s;" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JS"
+                        style="width:28px;position:absolute;top:60px;left:44px;animation:iconOrbit 2.2s linear infinite reverse;animation-delay:0.2s;" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                        alt="Spring"
+                        style="width:28px;position:absolute;top:10px;left:80px;animation:iconOrbit 2.2s linear infinite;animation-delay:0.6s;" />
+                </span>
+            </div>
+            <!-- Professional Text Loader -->
+            <div style="margin-bottom:1.2rem;">
+                <span id="typing-loader"
+                    style="color:#F8F8FF;font-family:'Quicksand',sans-serif;font-weight:600;font-size:1.25rem;letter-spacing:1px;white-space:pre;"></span>
+                <span class="typing-cursor" style="color:#4F8CFF;font-size:1.3rem;">|</span>
+            </div>
+            <div style="margin-top:1.2rem;">
+                <span style="color:#A0A0B2;font-size:1rem;font-family:'Quicksand',sans-serif;letter-spacing:0.5px;">
+                    Please wait...
+                </span>
+            </div>
+        </div>
+    </div>
+    
     <header>
         <nav class="container navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#">Manikanta H</a>
@@ -846,6 +927,49 @@
             animateProjects();
         });
         // Project section ends
+        // Laoding animation
+        // Typing animation for loader
+        const typingTexts = [
+            "Loading Manikanta's Portfolio",
+            "Java | Spring | HTML5 | CSS3 | JS"
+        ];
+        let typingIndex = 0, charIndex = 0, isDeleting = false;
+        const typingEl = document.getElementById('typing-loader');
+        function typeLoader() {
+            const currentText = typingTexts[typingIndex];
+            if (!isDeleting) {
+                typingEl.textContent = currentText.slice(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentText.length) {
+                    setTimeout(() => { isDeleting = true; typeLoader(); }, 1100);
+                } else {
+                    setTimeout(typeLoader, 60);
+                }
+            } else {
+                typingEl.textContent = currentText.slice(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    typingIndex = (typingIndex + 1) % typingTexts.length;
+                    setTimeout(typeLoader, 400);
+                } else {
+                    setTimeout(typeLoader, 30);
+                }
+            }
+        }
+        typeLoader();
+
+        // Hide loader after page load
+        window.addEventListener('load', function () {
+            const loaderBg = document.getElementById('loader-bg');
+            if (loaderBg) {
+                setTimeout(() => {
+                    loaderBg.style.opacity = '0';
+                    setTimeout(() => loaderBg.style.display = 'none', 600);
+                }, 2200); // 2.2 seconds for a professional feel
+            }
+        });
+        // Loading animation ends
     </script>
 </body>
 
