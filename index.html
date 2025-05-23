@@ -526,11 +526,6 @@
                     style="color:#F8F8FF;font-family:'Quicksand',sans-serif;font-weight:600;font-size:1.25rem;letter-spacing:1px;white-space:pre;"></span>
                 <span class="typing-cursor" style="color:#4F8CFF;font-size:1.3rem;">|</span>
             </div>
-            <div style="margin-top:1.2rem;">
-                <span style="color:#A0A0B2;font-size:1rem;font-family:'Quicksand',sans-serif;letter-spacing:0.5px;">
-                    Please wait...
-                </span>
-            </div>
         </div>
     </div>
     
@@ -930,9 +925,16 @@
         // Laoding animation
         // Typing animation for loader
         const typingTexts = [
-            "Loading Manikanta's Portfolio",
+            "Loading Please Wait...",
             "Java | Spring | HTML5 | CSS3 | JS"
         ];
+        // Move the typing loader text a bit down
+        document.addEventListener('DOMContentLoaded', function () {
+            const typingLoader = document.getElementById('typing-loader');
+            if (typingLoader) {
+            typingLoader.parentElement.style.marginTop = '4.2rem';
+            }
+        });
         let typingIndex = 0, charIndex = 0, isDeleting = false;
         const typingEl = document.getElementById('typing-loader');
         function typeLoader() {
