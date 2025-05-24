@@ -489,6 +489,14 @@
     }
 
     /* loading animation ends */
+    /* about section animation desgin */
+    @media (max-width: 767.98px) {
+        .about-animated-svg {
+            width: 160px !important;
+            height: 160px !important;
+        }
+    }
+    /* about section animation design ends */
 </style>
 </head>
 
@@ -528,7 +536,7 @@
             </div>
         </div>
     </div>
-    
+
     <header>
         <nav class="container navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" href="#">Manikanta H</a>
@@ -585,6 +593,111 @@
                     Resume</a>
             </div>
         </section>
+        <!-- About Section -->
+        <section id="about" class="py-5 position-relative"
+            style="background: #202032; border-radius: 24px; margin: 2rem 0; box-shadow: 0 8px 32px #4f8cff22; animation: fadeInSection 1.2s ease;">
+            <!-- Coding Animations placed diagonally and randomly around the SVG circle, not in content -->
+            <!-- Top-Left Diagonal: Spinning Gear -->
+            <svg width="34" height="34" style="position:absolute;top:18px;left:12%;z-index:2;animation:spinContact 4s linear infinite;">
+                <g>
+                    <circle cx="17" cy="17" r="11" fill="#23233a" stroke="#4F8CFF" stroke-width="3" />
+                    <g>
+                        <rect x="15" y="1" width="4" height="7" rx="2" fill="#FFB347"/>
+                        <rect x="15" y="26" width="4" height="7" rx="2" fill="#FFB347"/>
+                        <rect x="1" y="15" width="7" height="4" rx="2" fill="#FFB347"/>
+                        <rect x="26" y="15" width="7" height="4" rx="2" fill="#FFB347"/>
+                    </g>
+                </g>
+            </svg>
+            <!-- Top-Right Diagonal: Floating Curly Braces -->
+            <svg width="30" height="30" style="position:absolute;top:28px;right:14%;z-index:2;animation:floatInside1 3.2s ease-in-out infinite;">
+                <text x="15" y="22" text-anchor="middle" font-size="22" font-family="monospace" fill="#4F8CFF">{ }</text>
+            </svg>
+            <!-- Bottom-Left Diagonal: Small Floating Code Icon -->
+            <svg width="26" height="26" style="position:absolute;bottom:15px;left:10%;z-index:2;animation:floatInside1 2.6s ease-in-out infinite;">
+                <rect x="3" y="6" width="20" height="14" rx="4" fill="#23233a" stroke="#4F8CFF" stroke-width="2"/>
+                <text x="13" y="18" text-anchor="middle" font-size="12" font-family="monospace" fill="#FFB347">&lt;/&gt;</text>
+            </svg>
+            <!-- Bottom-Right Diagonal: Animated Lightning Bolt -->
+            <svg width="28" height="28" style="position:absolute;bottom:24px;right:12%;z-index:2;animation:pulseDot 2.2s infinite;">
+                <polygon points="14,2 11,14 17,14 9,25 19,11 15,11" fill="#FFB347" opacity="0.8"/>
+            </svg>
+            <!-- Random Top: Animated Dot -->
+            <span style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:#4F8CFF;border-radius:50%;opacity:0.22;animation:pulseDot 2.1s infinite 0.5s;"></span>
+            <!-- Random Bottom: Animated Dot -->
+            <span style="position:absolute;bottom:18px;right:50px;width:10px;height:10px;background:#FFB347;border-radius:50%;opacity:0.22;animation:pulseDot 2.8s infinite 0.3s;"></span>
+            <!-- About Content -->
+            <div class="container">
+                <h2 class="section-title mb-4" style="animation: fadeInUp 1s forwards 0.2s;">About Me</h2>
+                <div class="row align-items-center">
+                    <!-- Modern Animated SVG Illustration Instead of Profile Image -->
+                    <div class="col-md-4 text-center mb-4 mb-md-0 d-flex align-items-center justify-content-center position-relative">
+                        <svg class="about-animated-svg" width="200" height="200" viewBox="0 0 200 200" fill="none"
+                            style="display:block; animation: float 3s ease-in-out infinite;">
+                            <defs>
+                                <linearGradient id="aboutGradient" x1="0" y1="0" x2="200" y2="200"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#4F8CFF" />
+                                    <stop offset="1" stop-color="#FFB347" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Outer ring -->
+                            <circle cx="100" cy="100" r="88" stroke="url(#aboutGradient)" stroke-width="8" fill="none"
+                                opacity="0.18" />
+                            <!-- Animated dots -->
+                            <circle cx="100" cy="28" r="10" fill="#4F8CFF">
+                                <animate attributeName="cy" values="28;50;28" dur="2.2s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="172" cy="100" r="7" fill="#FFB347">
+                                <animate attributeName="cx" values="172;140;172" dur="2.5s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="100" cy="172" r="8" fill="#4F8CFF">
+                                <animate attributeName="cy" values="172;140;172" dur="2.1s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="28" cy="100" r="7" fill="#FFB347">
+                                <animate attributeName="cx" values="28;60;28" dur="2.3s" repeatCount="indefinite" />
+                            </circle>
+                            <!-- Central icon (code brackets) -->
+                            <rect x="75" y="75" width="50" height="50" rx="14" fill="#23233a" stroke="#4F8CFF"
+                                stroke-width="3" />
+                            <text x="100" y="108" text-anchor="middle" font-size="30"
+                                font-family="Quicksand, sans-serif" fill="#FFB347" font-weight="bold">&lt;/&gt;</text>
+                        </svg>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="lead mb-3"
+                            style="color:#F8F8FF; font-size:1.15rem; animation: fadeInUp 1s forwards 0.4s;">
+                            I am a passionate <span style="color:#4F8CFF;font-weight:600;">Java Developer</span> with
+                            over <span style="color:#FFB347;font-weight:600;">2 years</span> of hands-on experience
+                            building and optimizing scalable applications using <span
+                                style="color:#4F8CFF;">Java</span>, <span style="color:#4F8CFF;">Spring Boot</span>, and
+                            modern cloud technologies. I enjoy transforming complex requirements into robust,
+                            maintainable solutions that drive business value.
+                        </p>
+                        <ul class="mb-3"
+                            style="color:#A0A0B2; font-size:1.05rem; list-style:none; padding-left:0; animation: fadeInUp 1s forwards 0.6s;">
+                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                Consistently deliver projects ahead of deadlines with high quality.</li>
+                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i> Thrive
+                                on tackling challenging tasks and solving complex problems.</li>
+                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i> Strong
+                                collaborator, working closely with cross-functional teams.</li>
+                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i> Focused
+                                on code quality, performance, and scalable architecture.</li>
+                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i> Quick
+                                to adapt to new technologies and industry trends.</li>
+                        </ul>
+                        <div style="color:#F8F8FF; font-size:1.05rem; animation: fadeInUp 1s forwards 0.8s;">
+                            <strong>Specialization:</strong> Backend development, API design, and cloud integration.<br>
+                            <strong>Motivation:</strong> I am driven by curiosity and a desire to continuously learn.
+                            Outside of coding, I enjoy exploring new tech, gaming, and embracing new challenges that
+                            help me grow both professionally and personally.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section ends -->
         <!-- Project Details Section -->
         <section id="projects" class="projects">
             <div class="container">
@@ -932,7 +1045,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const typingLoader = document.getElementById('typing-loader');
             if (typingLoader) {
-            typingLoader.parentElement.style.marginTop = '4.2rem';
+                typingLoader.parentElement.style.marginTop = '4.2rem';
             }
         });
         let typingIndex = 0, charIndex = 0, isDeleting = false;
