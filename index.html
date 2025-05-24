@@ -496,6 +496,30 @@
             height: 160px !important;
         }
     }
+
+    @media (min-width: 768px) {
+
+        .about-mobile-summary,
+        .about-mobile-details {
+            display: none !important;
+        }
+
+        .about-mobile-full {
+            display: block !important;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .about-mobile-summary {
+            display: block !important;
+        }
+
+        /* Remove the forced display:none for .about-mobile-details so JS can toggle it */
+        .about-mobile-full {
+            display: none !important;
+        }
+    }
+
     /* about section animation design ends */
 </style>
 </head>
@@ -598,40 +622,49 @@
             style="background: #202032; border-radius: 24px; margin: 2rem 0; box-shadow: 0 8px 32px #4f8cff22; animation: fadeInSection 1.2s ease;">
             <!-- Coding Animations placed diagonally and randomly around the SVG circle, not in content -->
             <!-- Top-Left Diagonal: Spinning Gear -->
-            <svg width="34" height="34" style="position:absolute;top:18px;left:12%;z-index:2;animation:spinContact 4s linear infinite;">
+            <svg width="34" height="34"
+                style="position:absolute;top:18px;left:12%;z-index:2;animation:spinContact 4s linear infinite;">
                 <g>
                     <circle cx="17" cy="17" r="11" fill="#23233a" stroke="#4F8CFF" stroke-width="3" />
                     <g>
-                        <rect x="15" y="1" width="4" height="7" rx="2" fill="#FFB347"/>
-                        <rect x="15" y="26" width="4" height="7" rx="2" fill="#FFB347"/>
-                        <rect x="1" y="15" width="7" height="4" rx="2" fill="#FFB347"/>
-                        <rect x="26" y="15" width="7" height="4" rx="2" fill="#FFB347"/>
+                        <rect x="15" y="1" width="4" height="7" rx="2" fill="#FFB347" />
+                        <rect x="15" y="26" width="4" height="7" rx="2" fill="#FFB347" />
+                        <rect x="1" y="15" width="7" height="4" rx="2" fill="#FFB347" />
+                        <rect x="26" y="15" width="7" height="4" rx="2" fill="#FFB347" />
                     </g>
                 </g>
             </svg>
             <!-- Top-Right Diagonal: Floating Curly Braces -->
-            <svg width="30" height="30" style="position:absolute;top:28px;right:14%;z-index:2;animation:floatInside1 3.2s ease-in-out infinite;">
-                <text x="15" y="22" text-anchor="middle" font-size="22" font-family="monospace" fill="#4F8CFF">{ }</text>
+            <svg width="30" height="30"
+                style="position:absolute;top:28px;right:14%;z-index:2;animation:floatInside1 3.2s ease-in-out infinite;">
+                <text x="15" y="22" text-anchor="middle" font-size="22" font-family="monospace" fill="#4F8CFF">{
+                    }</text>
             </svg>
             <!-- Bottom-Left Diagonal: Small Floating Code Icon -->
-            <svg width="26" height="26" style="position:absolute;bottom:15px;left:10%;z-index:2;animation:floatInside1 2.6s ease-in-out infinite;">
-                <rect x="3" y="6" width="20" height="14" rx="4" fill="#23233a" stroke="#4F8CFF" stroke-width="2"/>
-                <text x="13" y="18" text-anchor="middle" font-size="12" font-family="monospace" fill="#FFB347">&lt;/&gt;</text>
+            <svg width="26" height="26"
+                style="position:absolute;bottom:15px;left:10%;z-index:2;animation:floatInside1 2.6s ease-in-out infinite;">
+                <rect x="3" y="6" width="20" height="14" rx="4" fill="#23233a" stroke="#4F8CFF" stroke-width="2" />
+                <text x="13" y="18" text-anchor="middle" font-size="12" font-family="monospace"
+                    fill="#FFB347">&lt;/&gt;</text>
             </svg>
             <!-- Bottom-Right Diagonal: Animated Lightning Bolt -->
-            <svg width="28" height="28" style="position:absolute;bottom:24px;right:12%;z-index:2;animation:pulseDot 2.2s infinite;">
-                <polygon points="14,2 11,14 17,14 9,25 19,11 15,11" fill="#FFB347" opacity="0.8"/>
+            <svg width="28" height="28"
+                style="position:absolute;bottom:24px;right:12%;z-index:2;animation:pulseDot 2.2s infinite;">
+                <polygon points="14,2 11,14 17,14 9,25 19,11 15,11" fill="#FFB347" opacity="0.8" />
             </svg>
             <!-- Random Top: Animated Dot -->
-            <span style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:#4F8CFF;border-radius:50%;opacity:0.22;animation:pulseDot 2.1s infinite 0.5s;"></span>
+            <span
+                style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:#4F8CFF;border-radius:50%;opacity:0.22;animation:pulseDot 2.1s infinite 0.5s;"></span>
             <!-- Random Bottom: Animated Dot -->
-            <span style="position:absolute;bottom:18px;right:50px;width:10px;height:10px;background:#FFB347;border-radius:50%;opacity:0.22;animation:pulseDot 2.8s infinite 0.3s;"></span>
+            <span
+                style="position:absolute;bottom:18px;right:50px;width:10px;height:10px;background:#FFB347;border-radius:50%;opacity:0.22;animation:pulseDot 2.8s infinite 0.3s;"></span>
             <!-- About Content -->
             <div class="container">
                 <h2 class="section-title mb-4" style="animation: fadeInUp 1s forwards 0.2s;">About Me</h2>
                 <div class="row align-items-center">
                     <!-- Modern Animated SVG Illustration Instead of Profile Image -->
-                    <div class="col-md-4 text-center mb-4 mb-md-0 d-flex align-items-center justify-content-center position-relative">
+                    <div
+                        class="col-md-4 text-center mb-4 mb-md-0 d-flex align-items-center justify-content-center position-relative">
                         <svg class="about-animated-svg" width="200" height="200" viewBox="0 0 200 200" fill="none"
                             style="display:block; animation: float 3s ease-in-out infinite;">
                             <defs>
@@ -665,39 +698,115 @@
                         </svg>
                     </div>
                     <div class="col-md-8">
-                        <p class="lead mb-3"
-                            style="color:#F8F8FF; font-size:1.15rem; animation: fadeInUp 1s forwards 0.4s;">
-                            I am a passionate <span style="color:#4F8CFF;font-weight:600;">Java Developer</span> with
-                            over <span style="color:#FFB347;font-weight:600;">2 years</span> of hands-on experience
-                            building and optimizing scalable applications using <span
-                                style="color:#4F8CFF;">Java</span>, <span style="color:#4F8CFF;">Spring Boot</span>, and
-                            modern cloud technologies. I enjoy transforming complex requirements into robust,
-                            maintainable solutions that drive business value.
-                        </p>
-                        <ul class="mb-3"
-                            style="color:#A0A0B2; font-size:1.05rem; list-style:none; padding-left:0; animation: fadeInUp 1s forwards 0.6s;">
-                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
-                                Consistently deliver projects ahead of deadlines with high quality.</li>
-                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i> Thrive
-                                on tackling challenging tasks and solving complex problems.</li>
-                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i> Strong
-                                collaborator, working closely with cross-functional teams.</li>
-                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i> Focused
-                                on code quality, performance, and scalable architecture.</li>
-                            <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i> Quick
-                                to adapt to new technologies and industry trends.</li>
-                        </ul>
-                        <div style="color:#F8F8FF; font-size:1.05rem; animation: fadeInUp 1s forwards 0.8s;">
-                            <strong>Specialization:</strong> Backend development, API design, and cloud integration.<br>
-                            <strong>Motivation:</strong> I am driven by curiosity and a desire to continuously learn.
-                            Outside of coding, I enjoy exploring new tech, gaming, and embracing new challenges that
-                            help me grow both professionally and personally.
+                        <div class="about-mobile-collapse">
+                            <div class="about-mobile-summary d-md-none">
+                                <p class="lead mb-3"
+                                    style="color:#F8F8FF; font-size:1.15rem; animation: fadeInUp 1s forwards 0.4s;">
+                                    I am a passionate <span style="color:#4F8CFF;font-weight:600;">Java Developer</span>
+                                    with
+                                    over <span style="color:#FFB347;font-weight:600;">2 years</span> of hands-on
+                                    experience
+                                    building and optimizing scalable applications using <span
+                                        style="color:#4F8CFF;">Java</span>, <span style="color:#4F8CFF;">Spring
+                                        Boot</span>, and
+                                    modern cloud technologies.
+                                </p>
+                                <button class="btn btn-outline p-0 about-readmore-btn"
+                                    style="color:#4F8CFF;font-weight:600; display: block; width: auto; margin: 0 auto;">Read More</button>
+                            </div>
+                            <div class="about-mobile-full d-none d-md-block">
+                                <p class="lead mb-3"
+                                    style="color:#F8F8FF; font-size:1.15rem; animation: fadeInUp 1s forwards 0.4s;">
+                                    I am a passionate <span style="color:#4F8CFF;font-weight:600;">Java Developer</span>
+                                    with
+                                    over <span style="color:#FFB347;font-weight:600;">2 years</span> of hands-on
+                                    experience
+                                    building and optimizing scalable applications using <span
+                                        style="color:#4F8CFF;">Java</span>, <span style="color:#4F8CFF;">Spring
+                                        Boot</span>, and
+                                    modern cloud technologies. I enjoy transforming complex requirements into robust,
+                                    maintainable solutions that drive business value.
+                                </p>
+                                <ul class="mb-3"
+                                    style="color:#A0A0B2; font-size:1.05rem; list-style:none; padding-left:0; animation: fadeInUp 1s forwards 0.6s;">
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Consistently deliver projects ahead of deadlines with high quality.</li>
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Thrive
+                                        on tackling challenging tasks and solving complex problems.</li>
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Strong
+                                        collaborator, working closely with cross-functional teams.</li>
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Focused
+                                        on code quality, performance, and scalable architecture.</li>
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Quick
+                                        to adapt to new technologies and industry trends.</li>
+                                </ul>
+                                <div style="color:#F8F8FF; font-size:1.05rem; animation: fadeInUp 1s forwards 0.8s;">
+                                    <strong>Specialization:</strong> Backend development, API design, and cloud
+                                    integration.<br>
+                                    <strong>Motivation:</strong> I am driven by curiosity and a desire to continuously
+                                    learn.
+                                    Outside of coding, I enjoy exploring new tech, gaming, and embracing new challenges
+                                    that
+                                    help me grow both professionally and personally.
+                                </div>
+                            </div>
+                            <div class="about-mobile-details d-none">
+                                <p class="lead mb-3"
+                                    style="color:#F8F8FF; font-size:1.15rem; animation: fadeInUp 1s forwards 0.4s;">
+                                    I am a passionate <span style="color:#4F8CFF;font-weight:600;">Java Developer</span>
+                                    with
+                                    over <span style="color:#FFB347;font-weight:600;">2 years</span> of hands-on
+                                    experience
+                                    building and optimizing scalable applications using <span
+                                        style="color:#4F8CFF;">Java</span>, <span style="color:#4F8CFF;">Spring
+                                        Boot</span>, and
+                                    modern cloud technologies. I enjoy transforming complex requirements into robust,
+                                    maintainable solutions that drive business value.
+                                </p>
+                                <ul class="mb-3"
+                                    style="color:#A0A0B2; font-size:1.05rem; list-style:none; padding-left:0; animation: fadeInUp 1s forwards 0.6s;">
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Consistently deliver projects ahead of deadlines with high quality.</li>
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Thrive
+                                        on tackling challenging tasks and solving complex problems.</li>
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Strong
+                                        collaborator, working closely with cross-functional teams.</li>
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Focused
+                                        on code quality, performance, and scalable architecture.</li>
+                                    <li><i class="bi bi-check-circle-fill" style="color:#4F8CFF; margin-right:8px;"></i>
+                                        Quick
+                                        to adapt to new technologies and industry trends.</li>
+                                </ul>
+                                <div style="color:#F8F8FF; font-size:1.05rem; animation: fadeInUp 1s forwards 0.8s;">
+                                    <strong>Specialization:</strong> Backend development, API design, and cloud
+                                    integration.<br>
+                                    <strong>Motivation:</strong> I am driven by curiosity and a desire to continuously
+                                    learn.
+                                    Outside of coding, I enjoy exploring new tech, gaming, and embracing new challenges
+                                    that
+                                    help me grow both professionally and personally.
+                                </div>
+                                <button class="btn btn-outline p-0 about-readless-btn"
+                                    style="color:#4F8CFF;font-weight:600; display: block; width: auto; margin: 0 auto;">Read Less</button>
+                            </div>
+                        </div>
+                        <!-- Desktop: always show full content -->
+                        <div class="d-none d-md-block">
+                            <!-- Already shown above in .about-mobile-full for desktop -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- About Section ends -->
+
         <!-- Project Details Section -->
         <section id="projects" class="projects">
             <div class="container">
@@ -755,142 +864,574 @@
                         data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel"
+                    <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" </button>
+                </div>
+            </div>
+        </section>
+        <!-- Poject section details ends -->
+
+        <!-- Skills Section (Web: Grid, Mobile: Carousel) -->
+        <section id="skills" class="skills-section py-5">
+            <div class="container">
+                <h2 class="section-title mb-4">Skills</h2>
+                <!-- Desktop/Tablet Grid -->
+                <div class="row d-none d-md-flex">
+                    <!-- Languages -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card skill-card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                    <i class="bi bi-code-slash me-2"></i>Languages
+                                </h5>
+                                <!-- Always visible skills -->
+                                <div class="skill-group">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                            alt="Java" title="Java" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Java</span>
+                                        <span class="badge bg-primary">Advanced</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" style="width: 90%;" aria-valuenow="90">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                            alt="JavaScript" title="JavaScript" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">JavaScript</span>
+                                        <span class="badge bg-warning text-dark">Advanced</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" style="width: 85%;" aria-valuenow="85">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Hidden skills -->
+                                <div class="skill-group-extra d-none">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                            alt="HTML5" title="HTML5" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">HTML5</span>
+                                        <span class="badge bg-success">Expert</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 95%;" aria-valuenow="95">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                            alt="CSS3" title="CSS3" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">CSS3</span>
+                                        <span class="badge bg-primary">Advanced</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" style="width: 90%;" aria-valuenow="90">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                            alt="SQL" title="SQL" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">SQL</span>
+                                        <span class="badge bg-info text-dark">Proficient</span>
+                                    </div>
+                                    <div class="progress mb-1" style="height: 8px;">
+                                        <div class="progress-bar bg-info" style="width: 80%;" aria-valuenow="80"></div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-link p-0 mt-2 skill-toggle-btn" style="color:#4F8CFF;">View
+                                    More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Frameworks -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card skill-card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                    <i class="bi bi-layers me-2"></i>Frameworks
+                                </h5>
+                                <div class="skill-group">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                                            alt="Spring Boot" title="Spring Boot" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Spring Boot</span>
+                                        <span class="badge bg-success">Proficient</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 80%;" aria-valuenow="80">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                                            alt="Spring" title="Spring" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Spring (Core, MVC, Data JPA)</span>
+                                        <span class="badge bg-success">Proficient</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 80%;" aria-valuenow="80">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-group-extra d-none">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                                            alt="Spring Boot" title="Spring Boot" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Spring Security</span>
+                                        <span class="badge bg-success">Proficient</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 75%;" aria-valuenow="75">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg"
+                                            alt="Hibernate" title="Hibernate" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Hibernate</span>
+                                        <span class="badge bg-info text-dark">Intermediate</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-info" style="width: 70%;" aria-valuenow="70"></div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                            alt="Bootstrap" title="Bootstrap" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Bootstrap</span>
+                                        <span class="badge"
+                                            style="background-color:#7952b3;color:#fff;">Proficient</span>
+                                    </div>
+                                    <div class="progress mb-1" style="height: 8px;">
+                                        <div class="progress-bar" style="background-color:#7952b3;width:80%;"
+                                            aria-valuenow="80"></div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-link p-0 mt-2 skill-toggle-btn" style="color:#4F8CFF;">View
+                                    More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tools -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card skill-card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                    <i class="bi bi-tools me-2"></i>Tools
+                                </h5>
+                                <div class="skill-group">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                            alt="Git" title="Git" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Git</span>
+                                        <span class="badge bg-danger">Proficient</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-danger" style="width: 75%;" aria-valuenow="75">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg"
+                                            alt="Maven" title="Maven" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Maven</span>
+                                        <span class="badge bg-secondary">Proficient</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-secondary" style="width: 80%;" aria-valuenow="80">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-group-extra d-none">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                            alt="Docker" title="Docker" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Docker</span>
+                                        <span class="badge bg-info text-dark">Intermediate</span>
+                                    </div>
+                                    <div class="progress mb-1" style="height: 8px;">
+                                        <div class="progress-bar bg-info" style="width: 60%;" aria-valuenow="60"></div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg"
+                                            alt="JUnit" title="JUnit" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">JUnit</span>
+                                        <span class="badge bg-success">Advanced</span>
+                                    </div>
+                                    <div class="progress mb-1" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 85%;" aria-valuenow="85">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mockito/mockito-original.svg"
+                                            alt="Mockito" title="Mockito" style="width:32px;" class="me-2"
+                                            onerror="this.onerror=null;this.src='https://avatars.githubusercontent.com/u/7556189?s=200&v=4';">
+                                        <span class="fw-bold me-2">Mockito</span>
+                                        <span class="badge bg-warning text-dark">Advanced</span>
+                                    </div>
+                                    <div class="progress mb-1" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" style="width: 90%;" aria-valuenow="90">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-link p-0 mt-2 skill-toggle-btn" style="color:#4F8CFF;">View
+                                    More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Databases -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card skill-card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                    <i class="bi bi-database me-2"></i>Databases
+                                </h5>
+                                <div class="skill-group">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                            alt="MySQL" title="MySQL" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">MySQL</span>
+                                        <span class="badge bg-info text-dark">Proficient</span>
+                                    </div>
+                                    <div class="progress mb-2" style="height: 8px;">
+                                        <div class="progress-bar bg-info" style="width: 80%;" aria-valuenow="80"></div>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                                            alt="MongoDB" title="MongoDB" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">MongoDB</span>
+                                        <span class="badge bg-success">Intermediate</span>
+                                    </div>
+                                    <div class="progress mb-1" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 60%;" aria-valuenow="60">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skill-group-extra d-none">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/h2/h2-original.svg"
+                                            alt="H2 Database" title="H2 Database" style="width:32px;" class="me-2"
+                                            onerror="this.onerror=null;this.src='https://www.h2database.com/html/images/h2-logo-2.png';">
+                                        <span class="fw-bold me-2">H2 Database</span>
+                                        <span class="badge bg-secondary">Intermediate</span>
+                                    </div>
+                                    <div class="progress mb-1" style="height: 8px;">
+                                        <div class="progress-bar bg-secondary" style="width: 65%;" aria-valuenow="65">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-link p-0 mt-2 skill-toggle-btn" style="color:#4F8CFF;">View
+                                    More</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cloud / DevOps -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card skill-card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                    <i class="bi bi-cloud-arrow-up me-2"></i>Cloud / DevOps
+                                </h5>
+                                <div class="skill-group">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                                            alt="Azure" title="Azure" style="width:32px;" class="me-2">
+                                        <span class="fw-bold me-2">Azure</span>
+                                        <span class="badge bg-primary">Beginner</span>
+                                    </div>
+                                    <div class="progress mb-1" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" style="width: 40%;" aria-valuenow="40">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- No extra skills for this card -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Carousel -->
+                <div id="skillsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Languages -->
+                        <div class="carousel-item active">
+                            <div class="card skill-card h-100 shadow-sm border-0 mx-auto" style="max-width: 95%;">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                        <i class="bi bi-code-slash me-2"></i>Languages
+                                    </h5>
+                                    <div class="skill-group">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                                alt="Java" title="Java" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Java</span>
+                                            <span class="badge bg-primary">Advanced</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-primary" style="width: 90%;" aria-valuenow="90">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                                alt="JavaScript" title="JavaScript" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">JavaScript</span>
+                                            <span class="badge bg-warning text-dark">Advanced</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-warning" style="width: 85%;" aria-valuenow="85">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-group-extra d-none">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                                alt="HTML5" title="HTML5" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">HTML5</span>
+                                            <span class="badge bg-success">Expert</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-success" style="width: 95%;" aria-valuenow="95">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                                alt="CSS3" title="CSS3" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">CSS3</span>
+                                            <span class="badge bg-primary">Advanced</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-primary" style="width: 90%;" aria-valuenow="90">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                                alt="SQL" title="SQL" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">SQL</span>
+                                            <span class="badge bg-info text-dark">Proficient</span>
+                                        </div>
+                                        <div class="progress mb-1" style="height: 8px;">
+                                            <div class="progress-bar bg-info" style="width: 80%;" aria-valuenow="80">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-link p-0 mt-2 skill-toggle-btn" style="color:#4F8CFF;">View
+                                        More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Frameworks -->
+                        <div class="carousel-item">
+                            <div class="card skill-card h-100 shadow-sm border-0 mx-auto" style="max-width: 95%;">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                        <i class="bi bi-layers me-2"></i>Frameworks
+                                    </h5>
+                                    <div class="skill-group">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                                                alt="Spring Boot" title="Spring Boot" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Spring Boot</span>
+                                            <span class="badge bg-success">Proficient</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-success" style="width: 80%;" aria-valuenow="80">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                                                alt="Spring" title="Spring" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Spring (Core, MVC, Data JPA)</span>
+                                            <span class="badge bg-success">Proficient</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-success" style="width: 80%;" aria-valuenow="80">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-group-extra d-none">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                                                alt="Spring Boot" title="Spring Boot" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Spring Security</span>
+                                            <span class="badge bg-success">Proficient</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-success" style="width: 75%;" aria-valuenow="75">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg"
+                                                alt="Hibernate" title="Hibernate" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Hibernate</span>
+                                            <span class="badge bg-info text-dark">Intermediate</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-info" style="width: 70%;" aria-valuenow="70">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                                alt="Bootstrap" title="Bootstrap" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Bootstrap</span>
+                                            <span class="badge"
+                                                style="background-color:#7952b3;color:#fff;">Proficient</span>
+                                        </div>
+                                        <div class="progress mb-1" style="height: 8px;">
+                                            <div class="progress-bar" style="background-color:#7952b3;width:80%;"
+                                                aria-valuenow="80"></div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-link p-0 mt-2 skill-toggle-btn" style="color:#4F8CFF;">View
+                                        More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tools -->
+                        <div class="carousel-item">
+                            <div class="card skill-card h-100 shadow-sm border-0 mx-auto" style="max-width: 95%;">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                        <i class="bi bi-tools me-2"></i>Tools
+                                    </h5>
+                                    <div class="skill-group">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                                alt="Git" title="Git" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Git</span>
+                                            <span class="badge bg-danger">Proficient</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-danger" style="width: 75%;" aria-valuenow="75">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg"
+                                                alt="Maven" title="Maven" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Maven</span>
+                                            <span class="badge bg-secondary">Proficient</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-secondary" style="width: 80%;"
+                                                aria-valuenow="80"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-group-extra d-none">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                                alt="Docker" title="Docker" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Docker</span>
+                                            <span class="badge bg-info text-dark">Intermediate</span>
+                                        </div>
+                                        <div class="progress mb-1" style="height: 8px;">
+                                            <div class="progress-bar bg-info" style="width: 60%;" aria-valuenow="60">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg"
+                                                alt="JUnit" title="JUnit" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">JUnit</span>
+                                            <span class="badge bg-success">Advanced</span>
+                                        </div>
+                                        <div class="progress mb-1" style="height: 8px;">
+                                            <div class="progress-bar bg-success" style="width: 85%;" aria-valuenow="85">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mockito/mockito-original.svg"
+                                                alt="Mockito" title="Mockito" style="width:32px;" class="me-2"
+                                                onerror="this.onerror=null;this.src='https://avatars.githubusercontent.com/u/7556189?s=200&v=4';">
+                                            <span class="fw-bold me-2">Mockito</span>
+                                            <span class="badge bg-warning text-dark">Advanced</span>
+                                        </div>
+                                        <div class="progress mb-1" style="height: 8px;">
+                                            <div class="progress-bar bg-warning" style="width: 90%;" aria-valuenow="90">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-link p-0 mt-2 skill-toggle-btn" style="color:#4F8CFF;">View
+                                        More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Databases -->
+                        <div class="carousel-item">
+                            <div class="card skill-card h-100 shadow-sm border-0 mx-auto" style="max-width: 95%;">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                        <i class="bi bi-database me-2"></i>Databases
+                                    </h5>
+                                    <div class="skill-group">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                                alt="MySQL" title="MySQL" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">MySQL</span>
+                                            <span class="badge bg-info text-dark">Proficient</span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 8px;">
+                                            <div class="progress-bar bg-info" style="width: 80%;" aria-valuenow="80">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                                                alt="MongoDB" title="MongoDB" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">MongoDB</span>
+                                            <span class="badge bg-success">Intermediate</span>
+                                        </div>
+                                        <div class="progress mb-1" style="height: 8px;">
+                                            <div class="progress-bar bg-success" style="width: 60%;" aria-valuenow="60">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-group-extra d-none">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/h2/h2-original.svg"
+                                                alt="H2 Database" title="H2 Database" style="width:32px;" class="me-2"
+                                                onerror="this.onerror=null;this.src='https://www.h2database.com/html/images/h2-logo-2.png';">
+                                            <span class="fw-bold me-2">H2 Database</span>
+                                            <span class="badge bg-secondary">Intermediate</span>
+                                        </div>
+                                        <div class="progress mb-1" style="height: 8px;">
+                                            <div class="progress-bar bg-secondary" style="width: 65%;"
+                                                aria-valuenow="65"></div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-link p-0 mt-2 skill-toggle-btn" style="color:#4F8CFF;">View
+                                        More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cloud / DevOps -->
+                        <div class="carousel-item">
+                            <div class="card skill-card h-100 shadow-sm border-0 mx-auto" style="max-width: 95%;">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3" style="color:#4F8CFF;">
+                                        <i class="bi bi-cloud-arrow-up me-2"></i>Cloud / DevOps
+                                    </h5>
+                                    <div class="skill-group">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                                                alt="Azure" title="Azure" style="width:32px;" class="me-2">
+                                            <span class="fw-bold me-2">Azure</span>
+                                            <span class="badge bg-primary">Beginner</span>
+                                        </div>
+                                        <div class="progress mb-1" style="height: 8px;">
+                                            <div class="progress-bar bg-primary" style="width: 40%;" aria-valuenow="40">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- No extra skills for this card -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#skillsCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#skillsCarousel"
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </button>
                 </div>
             </div>
         </section>
-        <!-- Poject section details ends -->
-        <!-- Skills section -->
-        <section id="skills" class="skills-section py-5">
-            <div class="container">
-                <h2 class="section-title mb-4">Skills</h2>
-                <div class="row justify-content-center">
-                    <!-- Skill Card -->
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card skill-card text-center shadow-sm border-0 h-100">
-                            <div class="card-body">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                                    alt="Java" title="Java" class="mb-3" style="width:48px;">
-                                <h5 class="card-title mb-2">Java</h5>
-                                <div class="progress mb-2" style="height: 8px;">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;"
-                                        aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small class="text-muted">Advanced</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card skill-card text-center shadow-sm border-0 h-100">
-                            <div class="card-body">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-                                    alt="Spring" title="Spring" class="mb-3" style="width:48px;">
-                                <h5 class="card-title mb-2">Spring</h5>
-                                <div class="progress mb-2" style="height: 8px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;"
-                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small class="text-muted">Proficient</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card skill-card text-center shadow-sm border-0 h-100">
-                            <div class="card-body">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                                    alt="MySQL" title="MySQL" class="mb-3" style="width:48px;">
-                                <h5 class="card-title mb-2">MySQL</h5>
-                                <div class="progress mb-2" style="height: 8px;">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 75%;"
-                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small class="text-muted">Proficient</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card skill-card text-center shadow-sm border-0 h-100">
-                            <div class="card-body">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                                    alt="HTML5" title="HTML5" class="mb-3" style="width:48px;">
-                                <h5 class="card-title mb-2">HTML5</h5>
-                                <div class="progress mb-2" style="height: 8px;">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 95%;"
-                                        aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small class="text-muted">Expert</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card skill-card text-center shadow-sm border-0 h-100">
-                            <div class="card-body">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                                    alt="CSS3" title="CSS3" class="mb-3" style="width:48px;">
-                                <h5 class="card-title mb-2">CSS3</h5>
-                                <div class="progress mb-2" style="height: 8px;">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;"
-                                        aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small class="text-muted">Advanced</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card skill-card text-center shadow-sm border-0 h-100">
-                            <div class="card-body">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                    alt="JavaScript" title="JavaScript" class="mb-3" style="width:48px;">
-                                <h5 class="card-title mb-2">JavaScript</h5>
-                                <div class="progress mb-2" style="height: 8px;">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;"
-                                        aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small class="text-muted">Advanced</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card skill-card text-center shadow-sm border-0 h-100">
-                            <div class="card-body">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-                                    alt="Bootstrap" title="Bootstrap" class="mb-3" style="width:48px;">
-                                <h5 class="card-title mb-2">Bootstrap</h5>
-                                <div class="progress mb-2" style="height: 8px;">
-                                    <div class="progress-bar bg-purple" style="background-color:#7952b3;width:80%;"
-                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small class="text-muted">Proficient</small>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Card -->
-                    <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="card skill-card text-center shadow-sm border-0 h-100">
-                            <div class="card-body">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                                    alt="Git" title="Git" class="mb-3" style="width:48px;">
-                                <h5 class="card-title mb-2">Git</h5>
-                                <div class="progress mb-2" style="height: 8px;">
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;"
-                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <small class="text-muted">Proficient</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!-- Skills section ends -->
         <!-- Contact section -->
         <section id="contact" class="py-5 position-relative"
@@ -1085,6 +1626,94 @@
             }
         });
         // Loading animation ends
+        // skill carousel animation
+        // Toggle skills for both grid and carousel
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.skill-toggle-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const card = btn.closest('.card-body');
+                    const extra = card.querySelector('.skill-group-extra');
+                    if (extra) {
+                        if (extra.classList.contains('d-none')) {
+                            extra.classList.remove('d-none');
+                            btn.textContent = 'View Less';
+                        } else {
+                            extra.classList.add('d-none');
+                            btn.textContent = 'View More';
+                            card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                    }
+                });
+            });
+        });
+        // skill carousel animation ends
+
+        // About section mobile read more/less
+        function isMobile() {
+            return window.innerWidth < 768;
+        }
+        function showSummary() {
+            var summary = document.querySelector('.about-mobile-summary');
+            var details = document.querySelector('.about-mobile-details');
+            var full = document.querySelector('.about-mobile-full');
+            if (summary) summary.classList.remove('d-none');
+            if (details) details.classList.add('d-none');
+            if (full) full.classList.add('d-none');
+            // Show the Read More button again
+            var readMoreBtn = document.querySelector('.about-readmore-btn');
+            if (readMoreBtn) readMoreBtn.classList.remove('d-none');
+        }
+        function showDetails() {
+            var summary = document.querySelector('.about-mobile-summary');
+            var details = document.querySelector('.about-mobile-details');
+            var full = document.querySelector('.about-mobile-full');
+            if (summary) summary.classList.add('d-none');
+            if (details) details.classList.remove('d-none');
+            if (full) full.classList.add('d-none');
+            // Also hide the Read More button if it's still visible
+            var readMoreBtn = document.querySelector('.about-readmore-btn');
+            if (readMoreBtn) readMoreBtn.classList.add('d-none');
+        }
+        function showFull() {
+            var summary = document.querySelector('.about-mobile-summary');
+            var details = document.querySelector('.about-mobile-details');
+            var full = document.querySelector('.about-mobile-full');
+            if (summary) summary.classList.add('d-none');
+            if (details) details.classList.add('d-none');
+            if (full) full.classList.remove('d-none');
+        }
+        function updateAboutView() {
+            if (isMobile()) {
+                showSummary();
+            } else {
+                showFull();
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            updateAboutView();
+            window.addEventListener('resize', updateAboutView);
+
+            // Read More
+            document.querySelectorAll('.about-readmore-btn').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showDetails();
+                });
+            });
+            // Read Less
+            document.querySelectorAll('.about-readless-btn').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    showSummary();
+                    // Scroll back to about section top for better UX
+                    var aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+        // about nread more read less ends
     </script>
 </body>
 
