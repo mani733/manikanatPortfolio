@@ -682,7 +682,7 @@
                     const navLinks = document.querySelectorAll('.nav-anim-link');
                     const sections = ['about', 'projects', 'skills', 'contact'].map(id => document.getElementById(id));
                     function onScroll() {
-                        let scrollPos = window.scrollY + 80;
+                        let scrollPos = window.scrollY + 100;
                         let found = false;
                         for (let i = 0; i < sections.length; i++) {
                             if (sections[i] && sections[i].offsetTop <= scrollPos && (!sections[i + 1] || sections[i + 1].offsetTop > scrollPos)) {
